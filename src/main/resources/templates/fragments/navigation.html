@@ -1,0 +1,39 @@
+<header th:fragment="header">
+  <nav class="main-nav">
+    <ul>
+      <li>
+        <a th:href="@{/}">Home</a>
+      </li>
+
+      <li th:unless="${@loggedUser.isLogged}">
+        <a th:href="@{/users/login}">Login</a>
+      </li>
+
+      <li th:unless="${@loggedUser.isLogged}">
+        <a th:href="@{/users/register}">Register</a>
+      </li>
+
+      <li>
+        <a th:href="@{/about}">About</a>
+      </li>
+
+      <li>
+        <a th:href="@{/routes/add}">Add new route</a>
+      </li>
+
+      <li>
+        <a th:href="@{/}">Profile</a>
+      </li>
+
+      <li>
+        <a th:href="@{/}">Admin</a>
+      </li>
+
+      <li th:if="${@loggedUser.isLogged}">
+        <a th:href="@{/users/logout}">Logout</a>
+      </li>
+
+<!--      <th-block th:text="${@loggedUser.username} ?: 'no user'"></th-block>-->
+    </ul>
+  </nav>
+</header>

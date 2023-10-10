@@ -33,7 +33,7 @@ public class User extends BaseEntity {
     )
     private Set<Role> roles;
 
-    @Column(nullable = false)
+    @Column
     @Enumerated(EnumType.STRING)
     private Level level;
 
